@@ -25,13 +25,13 @@ public class MailService {
 
         Session mailSession = Session.getDefaultInstance(properties);
         MimeMessage message = new MimeMessage(mailSession);
-        message.setFrom(new InternetAddress("2kepocuhbl4a@gmail.com"));
+        message.setFrom(new InternetAddress("mail"));
         message.addRecipient(Message.RecipientType.TO, new InternetAddress(adress));
         message.setSubject("shop");
         message.setText(info);
 
         Transport tr = mailSession.getTransport();
-        tr.connect(null, "F0761CA42C44");
+        tr.connect(null, "pass");
         tr.sendMessage(message, message.getAllRecipients());
         tr.close();
     }
